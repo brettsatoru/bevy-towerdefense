@@ -5,3 +5,25 @@ edition = "2024"
 
 [dependencies]
 bevy = "0.16.1"
+
+# DEV OPTIMIZATIONS
+# Enable a small amount of optimization in the dev profile
+[profile.dev]
+opt-level = 1
+
+# Enable a large amount of optimization in the dev profile for dependencies.
+[profile.dev.package."*"]
+opt-level = 3
+
+# RELEASE OPTIMIZATIONS
+[profile.release]
+codegen-units = 1
+lto = "thin"
+
+[profile.wasm-release]
+inherits = "release"
+opt-level = "s"
+strip = "debuginfo"
+
+# Binaryen Optimizations will need to be included
+
