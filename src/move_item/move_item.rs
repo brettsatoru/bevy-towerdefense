@@ -40,7 +40,7 @@ fn sprite_movement(
             move2.y -= 1.;
         }
 
-        move2 = move2 * vel.0 * time.delta_secs();
+        move2 = move2.normalize_or_zero() * vel.0 * time.delta_secs();
 
         transform.translation.x += move2.x;
         transform.translation.y += move2.y;
