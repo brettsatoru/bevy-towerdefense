@@ -1,10 +1,9 @@
 use bevy::prelude::*;
-mod greet_system;
-use greet_system::greetsystem::HelloPlugin;
+mod move_item;
 
 fn main() {
     App::new()
     .add_plugins(DefaultPlugins)
-    .add_plugins(HelloPlugin)
+    .add_plugins(move_item::move_item::MoveItem)
     .run();
 }
