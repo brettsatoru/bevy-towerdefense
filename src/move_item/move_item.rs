@@ -44,5 +44,9 @@ fn sprite_movement(
 
         transform.translation.x += move2.x;
         transform.translation.y += move2.y;
+
+        if keyboard_input.pressed(KeyCode::Space) {
+            println!("Current move item position is: ({0}, {1})!", transform.translation.x, transform.translation.y);
+        }
     }
 }
